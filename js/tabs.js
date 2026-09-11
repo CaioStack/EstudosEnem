@@ -16,7 +16,7 @@ function iniciarAbas() {
       } else {
         painelSimulados.hidden = true;
         painelMateria.hidden = false;
-        // a partir da v0.5, aqui chamamos renderizarTopicos(materia)
+        renderizarTopicos(materia);
       }
     });
   });
