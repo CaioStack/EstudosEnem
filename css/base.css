@@ -1,0 +1,22 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: system-ui, "Segoe UI", Roboto, sans-serif;
+  background-color: var(--cor-fundo);
+  color: var(--cor-texto);
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+a { color: inherit; }
+
+button {
+  font: inherit;
+  cursor: pointer;
+  border: 1px solid var(--cor-borda);
+  background: var(--cor-fundo-secundario);
+  color: var(--cor-texto);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
+}
+
+button:hover { border-color: var(--cor-destaque); }
