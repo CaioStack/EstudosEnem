@@ -1,0 +1,33 @@
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.abas {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  padding: 1rem 1.5rem;
+  border-bottom: 1px solid var(--cor-borda);
+}
+
+.aba-btn.ativa {
+  background: var(--cor-destaque);
+  color: var(--cor-destaque-texto);
+}
+
+main {
+  padding: 1.5rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  color: var(--cor-texto-suave);
+  font-size: 0.85rem;
+}
