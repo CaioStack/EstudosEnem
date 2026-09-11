@@ -1,0 +1,7 @@
+[
+  { "id": "linguagens", "nome": "Linguagens, Códigos e suas Tecnologias" },
+  { "id": "humanas", "nome": "Ciências Humanas e suas Tecnologias" },
+  { "id": "natureza", "nome": "Ciências da Natureza e suas Tecnologias" },
+  { "id": "matematica", "nome": "Matemática e suas Tecnologias" },
+  { "id": "redacao", "nome": "Redação" }
+]
