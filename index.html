@@ -6,7 +6,33 @@
   <title>Estudos Enem</title>
 </head>
 <body>
-  <h1>Estudos Enem</h1>
-  <p>Em construção.</p>
+  <header class="topo">
+    <h1>Estudos Enem</h1>
+    <button id="toggle-tema">Alternar tema</button>
+  </header>
+
+  <nav class="abas" id="abas-materias">
+    <button class="aba-btn" data-materia="linguagens">Linguagens</button>
+    <button class="aba-btn" data-materia="humanas">Ciências Humanas</button>
+    <button class="aba-btn" data-materia="natureza">Ciências da Natureza</button>
+    <button class="aba-btn" data-materia="matematica">Matemática</button>
+    <button class="aba-btn" data-materia="redacao">Redação</button>
+    <button class="aba-btn" data-materia="simulados">Simulados</button>
+  </nav>
+
+  <main id="conteudo-principal">
+    <section id="painel-materia">
+      <!-- lista de tópicos da matéria selecionada vai entrar aqui via JS (v0.5) -->
+      <p>Selecione uma matéria acima.</p>
+    </section>
+
+    <section id="painel-simulados" hidden>
+      <!-- grid de simulados vai entrar aqui via JS (v0.7) -->
+    </section>
+  </main>
+
+  <footer>
+    <p>Estudos Enem — desenvolvido por Caio Salgado Marques</p>
+  </footer>
 </body>
 </html>
