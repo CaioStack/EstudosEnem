@@ -12,3 +12,24 @@
 .artigo { margin-top: 1.5rem; }
 .texto-artigo { line-height: 1.6; margin: 1rem 0; }
 .texto-artigo p { margin-bottom: 0.75rem; }
+
+.questao {
+  border: 1px solid var(--cor-borda);
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+
+.questao-cabecalho {
+  font-size: 0.8rem;
+  color: var(--cor-texto-suave);
+  margin-bottom: 0.5rem;
+}
+
+.questao-alternativas { list-style: none; margin: 0.75rem 0; display: grid; gap: 0.4rem; }
+
+.questao-resposta {
+  margin-top: 0.75rem;
+  font-weight: bold;
+  color: var(--cor-destaque);
+}
