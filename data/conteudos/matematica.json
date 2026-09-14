@@ -5,21 +5,11 @@
       "id": "funcao-do-1-grau",
       "titulo": "Função do 1º grau",
       "resumo": "Função da forma f(x) = ax + b, com a ≠ 0, cujo gráfico é uma reta.",
-      "texto": "<p>Uma função do 1º grau é definida por f(x) = ax + b...</p><p>O coeficiente <strong>a</strong> é chamado de coeficiente angular...</p>",
-      "questoes": [
-        {
-          "id": "mat-2019-q1",
-          "ano": 2019,
-          "enunciado": "Exemplo de enunciado de questão sobre função do 1º grau aplicada a um contexto de custo de produção...",
-          "alternativas": [
-            { "letra": "A", "texto": "Alternativa A" },
-            { "letra": "B", "texto": "Alternativa B" },
-            { "letra": "C", "texto": "Alternativa C" },
-            { "letra": "D", "texto": "Alternativa D" },
-            { "letra": "E", "texto": "Alternativa E" }
-          ],
-          "correta": "C"
-        }
+      "texto": "<p>Uma função do 1º grau é definida por f(x) = ax + b...</p>",
+      "questoesRelacionadas": [
+        { "ano": 2019, "indice": 136 },
+        { "ano": 2021, "indice": 140 },
+        { "ano": 2023, "indice": 142 }
       ]
     }
   ]

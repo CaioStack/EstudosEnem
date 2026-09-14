@@ -36,6 +36,5 @@ function renderizarArtigo(topico) {
       <div id="lista-questoes-topico"></div>
     </article>
   `;
-  renderizarQuestoes(topico.questoes, "lista-questoes-topico");
-  // renderizarQuestoes é definida na v0.6
+  renderizarQuestoes(topico.questoesRelacionadas, "lista-questoes-topico");
 }
