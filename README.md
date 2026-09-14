@@ -105,7 +105,7 @@ estudos-enem/
 - `css/variables.css`, `css/base.css`, `css/components.css`: fonte Inter, `--raio`, `--sombra`, cards de questão redesenhados.
 
 ## Como testar
-Abra um tópico com `questoesRelacionadas` preenchido e confira se a questão carrega da API (enunciado, imagem quando houver, alternativas e botão "Ver resposta"). Se der erro de CORS no console, veja o "Plano B" no guia.
+Abra um tópico com `questoesRelacionadas` preenchido e confira se a questão carrega da API (enunciado, imagem quando houver, alternativas e botão "Ver resposta"). Pode ser que dê erro de CORS.
 
 ## Próxima versão
 v0.7 — navegação lateral (sidebar) no lugar das abas no topo.
