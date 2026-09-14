@@ -90,3 +90,22 @@ estudos-enem/
 **Caio Salgado Marques**
 
 ---
+
+## Versão Atual - v0.6
+
+# v0.6 — Motor de questões via API do ENEM + visual profissional
+
+**Objetivo:** parar de digitar questão por questão e passar a consumir a api.enem.dev; primeiro polimento visual (tipografia, cantos arredondados, sombras).
+
+## O que mudou
+- `js/enem-api.js` (novo): cliente da API com cache em memória.
+- `js/render-questao.js`: reescrito para buscar questões reais (enunciado, alternativas, imagens, gabarito) a partir de `{ano, indice}`.
+- `data/conteudos/*.json`: tópicos agora guardam `questoesRelacionadas` (referências leves) em vez do texto completo da questão.
+- `pages/curadoria.html` + `js/curadoria.js` (novo, uso interno): ferramenta para achar e copiar referências de questões por ano/disciplina.
+- `css/variables.css`, `css/base.css`, `css/components.css`: fonte Inter, `--raio`, `--sombra`, cards de questão redesenhados.
+
+## Como testar
+Abra um tópico com `questoesRelacionadas` preenchido e confira se a questão carrega da API (enunciado, imagem quando houver, alternativas e botão "Ver resposta"). Se der erro de CORS no console, veja o "Plano B" no guia.
+
+## Próxima versão
+v0.7 — navegação lateral (sidebar) no lugar das abas no topo.
