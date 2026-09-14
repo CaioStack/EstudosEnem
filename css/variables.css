@@ -19,3 +19,12 @@ html[data-tema="claro"] {
   --cor-destaque: #1a1a1a;
   --cor-destaque-texto: #ffffff;
 }
+
+:root {
+  --fonte-base: "Inter", system-ui, -apple-system, sans-serif;
+  --raio: 14px;
+  --raio-pequeno: 8px;
+  --sombra-sutil: 0 1px 3px rgba(0, 0, 0, 0.15);
+  --sombra: 0 8px 24px rgba(0, 0, 0, 0.25);
+  --transicao: 180ms ease;
+}
