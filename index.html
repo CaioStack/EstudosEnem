@@ -18,41 +18,44 @@
 <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   </head>
 <body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="marca">
+        <span class="marca-ponto"></span>
+        <span>Estudos Enem</span>
+      </div>
 
-   <script src="js/enem-api.js"></script>
-<script src="js/render-questao.js"></script>
-<script src="js/data-loader.js"></script>
-<script src="js/render-materia.js"></script>
-<script src="js/render-simulado.js"></script>
-<script src="js/theme.js"></script>
-<script src="js/tabs.js"></script>
-  <header class="topo">
-    <h1>Estudos Enem</h1>
-    <button id="toggle-tema">Alternar tema</button>
-  </header>
+      <nav class="menu-lateral" id="abas-materias">
+        <button class="menu-item ativa" data-materia="linguagens">Linguagens</button>
+        <button class="menu-item" data-materia="humanas">Ciências Humanas</button>
+        <button class="menu-item" data-materia="natureza">Ciências da Natureza</button>
+        <button class="menu-item" data-materia="matematica">Matemática</button>
+        <button class="menu-item" data-materia="redacao">Redação</button>
+        <button class="menu-item" data-materia="simulados">Simulados</button>
+      </nav>
 
-  <nav class="abas" id="abas-materias">
-    <button class="aba-btn" data-materia="linguagens">Linguagens</button>
-    <button class="aba-btn" data-materia="humanas">Ciências Humanas</button>
-    <button class="aba-btn" data-materia="natureza">Ciências da Natureza</button>
-    <button class="aba-btn" data-materia="matematica">Matemática</button>
-    <button class="aba-btn" data-materia="redacao">Redação</button>
-    <button class="aba-btn" data-materia="simulados">Simulados</button>
-  </nav>
+      <button id="toggle-tema" class="botao-tema">Alternar tema</button>
+    </aside>
 
-  <main id="conteudo-principal">
-    <section id="painel-materia">
-      <!-- lista de tópicos da matéria selecionada vai entrar aqui via JS (v0.5) -->
-      <p>Selecione uma matéria acima.</p>
-    </section>
+    <div class="area-principal">
+      <header class="topo-mobile">
+        <button id="abrir-menu" aria-label="Abrir menu">☰</button>
+        <span>Estudos Enem</span>
+      </header>
 
-    <section id="painel-simulados" hidden>
-      <!-- grid de simulados vai entrar aqui via JS (v0.7) -->
-    </section>
-  </main>
+      <main id="conteudo-principal">
+        <section id="painel-materia">
+          <p>Selecione uma matéria ao lado.</p>
+        </section>
+        <section id="painel-simulados" hidden></section>
+      </main>
 
-  <footer>
-    <p>Estudos Enem — desenvolvido por Caio Salgado Marques</p>
-  </footer>
+      <footer>
+        <p>Estudos Enem — desenvolvido por Caio Salgado Marques</p>
+      </footer>
+    </div>
+  </div>
+
+  <!-- scripts na mesma ordem da v0.6 -->
 </body>
 </html>

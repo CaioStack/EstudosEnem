@@ -1,17 +1,63 @@
-.topo {
+.app-shell { display: flex; min-height: 100vh; }
+
+.sidebar {
+  width: 240px;
+  flex-shrink: 0;
+  background: var(--cor-fundo-secundario);
+  border-right: 1px solid var(--cor-borda);
+  padding: 1.5rem 1rem;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--cor-borda);
+  flex-direction: column;
+  gap: 1.5rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
 }
 
-.abas {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  padding: 1rem 1.5rem;
-  border-bottom: 1px solid var(--cor-borda);
+.marca { display: flex; align-items: center; gap: 0.5rem; font-weight: 700; font-size: 1.05rem; }
+.marca-ponto { width: 10px; height: 10px; border-radius: 50%; background: var(--cor-destaque); }
+
+.menu-lateral { display: flex; flex-direction: column; gap: 0.3rem; }
+
+.menu-item {
+  text-align: left;
+  border: none;
+  background: transparent;
+  padding: 0.65rem 0.85rem;
+  border-radius: var(--raio-pequeno);
+  color: var(--cor-texto-suave);
+  font-weight: 500;
+  transition: background var(--transicao), color var(--transicao);
+}
+.menu-item:hover { background: var(--cor-fundo); color: var(--cor-texto); }
+.menu-item.ativa { background: var(--cor-destaque); color: var(--cor-destaque-texto); }
+
+.botao-tema { margin-top: auto; }
+
+.area-principal { flex: 1; min-width: 0; display: flex; flex-direction: column; }
+main { padding: 2rem; max-width: 980px; width: 100%; margin: 0 auto; flex: 1; }
+.topo-mobile { display: none; }
+
+@media (max-width: 860px) {
+  .sidebar {
+    position: fixed;
+    left: -260px;
+    top: 0;
+    z-index: 20;
+    transition: left var(--transicao);
+    box-shadow: var(--sombra);
+  }
+  .sidebar.aberta { left: 0; }
+  .topo-mobile {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 1rem 1.25rem;
+    border-bottom: 1px solid var(--cor-borda);
+    font-weight: 700;
+  }
+  .topo-mobile button { background: transparent; border: none; font-size: 1.3rem; color: var(--cor-texto); }
+  main { padding: 1.25rem; }
 }
 
 .aba-btn.ativa {

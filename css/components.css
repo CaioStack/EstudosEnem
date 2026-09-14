@@ -1,13 +1,25 @@
-.lista-topicos { list-style: none; display: grid; gap: 0.75rem; }
+.lista-topicos {
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.9rem;
+}
 
 .topico-btn {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.25rem;
   width: 100%;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  background: var(--cor-fundo-secundario);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  padding: 1.1rem 1.2rem;
+  transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
 }
+.topico-btn:hover { transform: translateY(-3px); box-shadow: var(--sombra-sutil); border-color: var(--cor-destaque); }
+.topico-btn strong { font-size: 1rem; }
+.topico-btn span { color: var(--cor-texto-suave); font-size: 0.88rem; }
 
 .artigo { margin-top: 1.5rem; }
 .texto-artigo { line-height: 1.6; margin: 1rem 0; }
