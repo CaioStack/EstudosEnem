@@ -38,7 +38,9 @@
 main { padding: 2rem; max-width: 980px; width: 100%; margin: 0 auto; flex: 1; }
 .topo-mobile { display: none; }
 
-@media (max-width: 860px) {
+@media (max-width: 640px) {
+  .lista-topicos, .grid-simulados { grid-template-columns: 1fr; }
+  .lista-gabarito { columns: 2; }
   .sidebar {
     position: fixed;
     left: -260px;
@@ -57,7 +59,7 @@ main { padding: 2rem; max-width: 980px; width: 100%; margin: 0 auto; flex: 1; }
     font-weight: 700;
   }
   .topo-mobile button { background: transparent; border: none; font-size: 1.3rem; color: var(--cor-texto); }
-  main { padding: 1.25rem; }
+  main { padding: 1rem; }
 }
 
 .aba-btn.ativa {
