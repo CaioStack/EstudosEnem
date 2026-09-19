@@ -132,3 +132,40 @@
 
 .filtros-curadoria { display: flex; gap: 1rem; align-items: end; margin-bottom: 1.5rem; flex-wrap: wrap; }
 .filtros-curadoria label { display: flex; flex-direction: column; gap: 0.3rem; font-size: 0.85rem; }
+
+/* ===== Grid de simulados + gabarito (v0.8) ===== */
+.grid-simulados {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 0.9rem;
+}
+
+.card-simulado {
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio);
+  background: var(--cor-fundo-secundario);
+  padding: 1.2rem;
+  text-decoration: none;
+  color: var(--cor-texto);
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  transition: transform var(--transicao), box-shadow var(--transicao), border-color var(--transicao);
+}
+.card-simulado:hover { transform: translateY(-3px); box-shadow: var(--sombra-sutil); border-color: var(--cor-destaque); }
+
+.lista-gabarito { list-style: none; columns: 3; gap: 1rem; margin-top: 1rem; }
+.lista-gabarito li { padding: 0.15rem 0; font-weight: 600; }
+
+.textarea-redacao {
+  width: 100%;
+  margin-top: 1rem;
+  background: var(--cor-fundo);
+  color: var(--cor-texto);
+  border: 1px solid var(--cor-borda);
+  border-radius: var(--raio-pequeno);
+  padding: 1rem;
+  font: inherit;
+  line-height: 1.6;
+  resize: vertical;
+}
