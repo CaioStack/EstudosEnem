@@ -2,28 +2,33 @@ async function renderizarTopicos(materiaId) {
   const painel = document.getElementById("painel-materia");
   painel.innerHTML = "<p>Carregando...</p>";
 
-  const dados = await carregarConteudo(materiaId);
+  try {
+    const dados = await carregarConteudo(materiaId);
 
-  painel.innerHTML = `
-    <ul class="lista-topicos">
-      ${dados.topicos.map((topico) => `
-        <li>
-          <button class="topico-btn" data-topico="${topico.id}">
-            <strong>${topico.titulo}</strong>
-            <span>${topico.resumo}</span>
-          </button>
-        </li>
-      `).join("")}
-    </ul>
-    <div id="artigo-topico"></div>
-  `;
+    painel.innerHTML = `
+      <ul class="lista-topicos">
+        ${dados.topicos.map((topico) => `
+          <li>
+            <button class="topico-btn" data-topico="${topico.id}">
+              <strong>${topico.titulo}</strong>
+              <span>${topico.resumo}</span>
+            </button>
+          </li>
+        `).join("")}
+      </ul>
+      <div id="artigo-topico"></div>
+    `;
 
-  painel.querySelectorAll(".topico-btn").forEach((botao) => {
-    botao.addEventListener("click", () => {
-      const topico = dados.topicos.find((t) => t.id === botao.dataset.topico);
-      renderizarArtigo(topico);
+    painel.querySelectorAll(".topico-btn").forEach((botao) => {
+      botao.addEventListener("click", () => {
+        const topico = dados.topicos.find((t) => t.id === botao.dataset.topico);
+        renderizarArtigo(topico);
+      });
     });
-  });
+  } catch (erro) {
+    painel.innerHTML = `<p class="erro">Não foi possível carregar o conteúdo desta matéria.</p>`;
+    console.error(erro);
+  }
 }
 
 function renderizarArtigo(topico) {
@@ -36,5 +41,5 @@ function renderizarArtigo(topico) {
       <div id="lista-questoes-topico"></div>
     </article>
   `;
-  renderizarQuestoes(topico.questoesRelacionadas, "lista-questoes-topico");
+  renderizarQuestoes(topico.questoesRelacionadas || [], "lista-questoes-topico");
 }
