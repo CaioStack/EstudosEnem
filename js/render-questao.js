@@ -1,4 +1,5 @@
 async function renderizarQuestoes(referencias, idContainer) {
+  referencias = referencias || []; // testando se o array de referências é nulo ou indefinido
   const container = document.getElementById(idContainer);
   container.innerHTML = `<p class="carregando">Carregando questões...</p>`;
 
