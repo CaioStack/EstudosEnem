@@ -1,22 +1,130 @@
 [
-  { "id": "simulado-2005", "titulo": "Simulado ENEM 2005", "ano": 2005, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2006", "titulo": "Simulado ENEM 2006", "ano": 2006, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2007", "titulo": "Simulado ENEM 2007", "ano": 2007, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2008", "titulo": "Simulado ENEM 2008", "ano": 2008, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2009", "titulo": "Simulado ENEM 2009", "ano": 2009, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2010", "titulo": "Simulado ENEM 2010", "ano": 2010, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2011", "titulo": "Simulado ENEM 2011", "ano": 2011, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2012", "titulo": "Simulado ENEM 2012", "ano": 2012, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2013", "titulo": "Simulado ENEM 2013", "ano": 2013, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2014", "titulo": "Simulado ENEM 2014", "ano": 2014, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2015", "titulo": "Simulado ENEM 2015", "ano": 2015, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2016", "titulo": "Simulado ENEM 2016", "ano": 2016, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2017", "titulo": "Simulado ENEM 2017", "ano": 2017, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2018", "titulo": "Simulado ENEM 2018", "ano": 2018, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2019", "titulo": "Simulado ENEM 2019", "ano": 2019, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2020", "titulo": "Simulado ENEM 2020", "ano": 2020, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2021", "titulo": "Simulado ENEM 2021", "ano": 2021, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2022", "titulo": "Simulado ENEM 2022", "ano": 2022, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2023", "titulo": "Simulado ENEM 2023", "ano": 2023, "redacao": { "tema": "", "textosMotivadores": [] } },
-  { "id": "simulado-2024", "titulo": "Simulado ENEM 2024", "ano": 2024, "redacao": { "tema": "", "textosMotivadores": [] } }
+  {
+    "id": "simulado-2009",
+    "titulo": "Simulado ENEM 2009",
+    "ano": 2009,
+    "redacao": {
+      "tema": "O indivíduo frente à ética nacional"
+    }
+  },
+  {
+    "id": "simulado-2010",
+    "titulo": "Simulado ENEM 2010",
+    "ano": 2010,
+    "redacao": {
+      "tema": "O trabalho na construção da dignidade humana"
+    }
+  },
+  {
+    "id": "simulado-2011",
+    "titulo": "Simulado ENEM 2011",
+    "ano": 2011,
+    "redacao": {
+      "tema": "Viver em rede no século XXI: os limites entre o público e o privado"
+    }
+  },
+  {
+    "id": "simulado-2012",
+    "titulo": "Simulado ENEM 2012",
+    "ano": 2012,
+    "redacao": {
+      "tema": "Movimento imigratório para o Brasil no século XXI"
+    }
+  },
+  {
+    "id": "simulado-2013",
+    "titulo": "Simulado ENEM 2013",
+    "ano": 2013,
+    "redacao": {
+      "tema": "Efeitos da formação de um padrão estético brasileiro para a aceitação da identidade negra"
+    }
+  },
+  {
+    "id": "simulado-2014",
+    "titulo": "Simulado ENEM 2014",
+    "ano": 2014,
+    "redacao": {
+      "tema": "Publicidade infantil em questão no Brasil"
+    }
+  },
+  {
+    "id": "simulado-2015",
+    "titulo": "Simulado ENEM 2015",
+    "ano": 2015,
+    "redacao": {
+      "tema": "A persistência da violência contra a mulher na sociedade brasileira"
+    }
+  },
+  {
+    "id": "simulado-2016",
+    "titulo": "Simulado ENEM 2016",
+    "ano": 2016,
+    "redacao": {
+      "tema": "Caminhos para combater a intolerância religiosa no Brasil"
+    }
+  },
+  {
+    "id": "simulado-2017",
+    "titulo": "Simulado ENEM 2017",
+    "ano": 2017,
+    "redacao": {
+      "tema": "Desafios para a formação educacional de surdos no Brasil"
+    }
+  },
+  {
+    "id": "simulado-2018",
+    "titulo": "Simulado ENEM 2018",
+    "ano": 2018,
+    "redacao": {
+      "tema": "Manipulação do comportamento do usuário pelo controle de dados na internet"
+    }
+  },
+  {
+    "id": "simulado-2019",
+    "titulo": "Simulado ENEM 2019",
+    "ano": 2019,
+    "redacao": {
+      "tema": "Democratização do acesso ao cinema no Brasil"
+    }
+  },
+  {
+    "id": "simulado-2020",
+    "titulo": "Simulado ENEM 2020",
+    "ano": 2020,
+    "redacao": {
+      "tema": "O estigma associado às doenças mentais na sociedade brasileira"
+    }
+  },
+  {
+    "id": "simulado-2021",
+    "titulo": "Simulado ENEM 2021",
+    "ano": 2021,
+    "redacao": {
+      "tema": "Invisibilidade e registro civil: garantia de acesso à cidadania no Brasil"
+    }
+  },
+  {
+    "id": "simulado-2022",
+    "titulo": "Simulado ENEM 2022",
+    "ano": 2022,
+    "redacao": {
+      "tema": "Desafios para enfrentar a invisibilidade do trabalho de cuidado realizado pela mulher no Brasil"
+    }
+  },
+  {
+    "id": "simulado-2023",
+    "titulo": "Simulado ENEM 2023",
+    "ano": 2023,
+    "redacao": {
+      "tema": "Desafios para a convivência com a deficiência no Brasil"
+    }
+  },
+  {
+    "id": "simulado-2024",
+    "titulo": "Simulado ENEM 2024",
+    "ano": 2024,
+    "redacao": {
+      "tema": "Desafios para a valorização de comunidades e povos tradicionais no Brasil"
+    }
+  }
 ]
