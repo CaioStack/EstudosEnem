@@ -1,21 +1,146 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-tema="escuro">
+<html lang="pt-BR" data-tema="claro">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Estudos Enem</title>
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1, viewport-fit=cover"
+  >
+  <meta
+    name="description"
+    content="Estudos ENEM: conteúdos, questões reais e simulados completos."
+  >
 
-  <link rel="stylesheet" href="css/variables.css">
-  <link rel="stylesheet" href="css/base.css">
-  <link rel="stylesheet" href="css/layout.css">
-  <link rel="stylesheet" href="css/components.css">
+  <title>Estudos ENEM — Conteúdos e Simulados</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+    rel="stylesheet"
+  >
 
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <link rel="stylesheet" href="css/style.css">
+</head>
 
-  <!-- scripts na mesma ordem da v0.6 -->
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="marca" href="index.html" aria-label="Página inicial">
+        <span class="marca-icone">E</span>
+        <span>
+          <strong>Estudos</strong>
+          <small>ENEM</small>
+        </span>
+      </a>
+
+      <p class="menu-titulo">Áreas de estudo</p>
+
+      <nav class="menu-lateral" id="abas-materias" aria-label="Áreas do ENEM">
+        <button
+          type="button"
+          class="menu-item"
+          data-materia="linguagens"
+        >
+          Linguagens
+        </button>
+
+        <button
+          type="button"
+          class="menu-item"
+          data-materia="humanas"
+        >
+          Ciências Humanas
+        </button>
+
+        <button
+          type="button"
+          class="menu-item"
+          data-materia="natureza"
+        >
+          Ciências da Natureza
+        </button>
+
+        <button
+          type="button"
+          class="menu-item"
+          data-materia="matematica"
+        >
+          Matemática
+        </button>
+
+        <button
+          type="button"
+          class="menu-item"
+          data-materia="redacao"
+        >
+          Redação
+        </button>
+
+        <button
+          type="button"
+          class="menu-item menu-item-simulados"
+          data-materia="simulados"
+        >
+          Simulados
+        </button>
+      </nav>
+
+      <div class="sidebar-rodape">
+        <p>Conteúdos + questões reais do ENEM</p>
+        <button
+          type="button"
+          class="botao-tema"
+          data-acao="tema"
+        >
+          Alternar tema
+        </button>
+      </div>
+    </aside>
+
+    <div class="area-principal">
+      <header class="topo-mobile">
+        <button
+          type="button"
+          id="abrir-menu"
+          aria-label="Abrir menu"
+        >
+          ☰
+        </button>
+
+        <strong>Estudos ENEM</strong>
+
+        <button
+          type="button"
+          class="tema-mobile"
+          data-acao="tema"
+          aria-label="Alternar tema"
+        >
+          Tema
+        </button>
+      </header>
+
+      <main id="conteudo-principal">
+        <section
+          id="painel-materia"
+          aria-live="polite"
+        ></section>
+
+        <section
+          id="painel-simulados"
+          hidden
+          aria-live="polite"
+        ></section>
+      </main>
+
+      <footer>
+        <strong>Estudos ENEM</strong>
+        <span>Conteúdos, questões e simulados em um só lugar.</span>
+      </footer>
+    </div>
+  </div>
+
+  <script src="js/conteudos.js"></script>
   <script src="js/enem-api.js"></script>
   <script src="js/render-questao.js"></script>
   <script src="js/data-loader.js"></script>
@@ -23,44 +148,5 @@
   <script src="js/render-simulado.js"></script>
   <script src="js/theme.js"></script>
   <script src="js/tabs.js"></script>
-</head>
-<body>
-  <div class="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <div class="marca">
-        <span class="marca-ponto"></span>
-        <span>Estudos Enem</span>
-      </div>
-
-      <nav class="menu-lateral" id="abas-materias">
-        <button class="menu-item ativa" data-materia="linguagens">Linguagens</button>
-        <button class="menu-item" data-materia="humanas">Ciências Humanas</button>
-        <button class="menu-item" data-materia="natureza">Ciências da Natureza</button>
-        <button class="menu-item" data-materia="matematica">Matemática</button>
-        <button class="menu-item" data-materia="redacao">Redação</button>
-        <button class="menu-item" data-materia="simulados">Simulados</button>
-      </nav>
-
-      <button id="toggle-tema" class="botao-tema">Alternar tema</button>
-    </aside>
-
-    <div class="area-principal">
-      <header class="topo-mobile">
-        <button id="abrir-menu" aria-label="Abrir menu">☰</button>
-        <span>Estudos Enem</span>
-      </header>
-
-      <main id="conteudo-principal">
-        <section id="painel-materia">
-          <p>Selecione uma matéria ao lado.</p>
-        </section>
-        <section id="painel-simulados" hidden></section>
-      </main>
-
-      <footer>
-        <p>Estudos Enem — desenvolvido por Caio Salgado Marques</p>
-      </footer>
-    </div>
-  </div>
 </body>
 </html>
