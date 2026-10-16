@@ -1,154 +1,130 @@
 <!DOCTYPE html>
-<html lang="pt-BR" data-tema="claro">
+<html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <meta
-    name="viewport"
-    content="width=device-width, initial-scale=1, viewport-fit=cover"
-  >
-  <meta
-    name="description"
-    content="Estudos ENEM: conteúdos, questões reais e simulados completos."
-  >
-
-  <title>Estudos ENEM — Conteúdos e Simulados</title>
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Estudos ENEM: conteúdos organizados, simulados interativos e ferramentas para planejar sua preparação para o Enem.">
+  <meta name="theme-color" content="#e8f7ed">
+  <title>Estudos ENEM — Sua preparação, no seu ritmo</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
-    rel="stylesheet"
-  >
-
-  <link rel="stylesheet" href="css/style.css">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/data.js" defer></script>
+  <script src="js/app.js" defer></script>
 </head>
-
 <body>
-  <div class="app-shell">
-    <aside class="sidebar" id="sidebar">
-      <div class="barra-interna">
-        <a class="marca" href="index.html" aria-label="Página inicial">
-          <span class="marca-icone">E</span>
-          <span>
-            <strong>Estudos</strong>
-            <small>ENEM</small>
-          </span>
-        </a>
+  <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="index.html" aria-label="Estudos ENEM, página inicial">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z" fill="currentColor" opacity=".15"/><path d="M12 13.5h16M12 20h16M12 26.5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
+        <span>estudos<span class="brand-accent">enem</span></span>
+      </a>
+      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
+        <a class="active" href="index.html">Início</a>
+        <a href="#materias">Matérias</a>
+        <a href="#simulados">Simulados</a>
+        <a href="#redacao">Redação</a>
+        <a href="#plano">Meu plano</a>
+      </nav>
+      <a class="header-cta" href="#materias">Começar a estudar <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
 
-        <p class="menu-titulo">Áreas de estudo</p>
-
-        <nav class="menu-lateral" id="abas-materias" aria-label="Áreas do ENEM">
-          <button
-            type="button"
-            class="menu-item"
-            data-materia="linguagens"
-          >
-            Linguagens
-          </button>
-
-          <button
-            type="button"
-            class="menu-item"
-            data-materia="humanas"
-          >
-            Ciências Humanas
-          </button>
-
-          <button
-            type="button"
-            class="menu-item"
-            data-materia="natureza"
-          >
-            Ciências da Natureza
-          </button>
-
-          <button
-            type="button"
-            class="menu-item"
-            data-materia="matematica"
-          >
-            Matemática
-          </button>
-
-          <button
-            type="button"
-            class="menu-item"
-            data-materia="redacao"
-          >
-            Redação
-          </button>
-
-          <button
-            type="button"
-            class="menu-item menu-item-simulados"
-            data-materia="simulados"
-          >
-            Simulados
-          </button>
-        </nav>
-
-        <div class="sidebar-rodape">
-          <p>Conteúdos + questões reais do ENEM</p>
-          <button
-            type="button"
-            class="botao-tema"
-            data-acao="tema"
-          >
-            Alternar tema
-          </button>
+  <main id="conteudo">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="eyebrow-dot"></span> SUA JORNADA COMEÇA AQUI</span>
+          <h1>Seu futuro merece<br>uma boa <span>preparação.</span></h1>
+          <p class="hero-text">Conteúdos organizados, simulados práticos e ferramentas para você estudar com clareza, consistência e confiança para o ENEM.</p>
+          <div class="hero-actions">
+            <a class="button button-primary" href="#materias">Explorar matérias <span>→</span></a>
+            <a class="button button-secondary" href="#simulados"><span class="play-icon">▶</span> Fazer um simulado</a>
+          </div>
+          <div class="hero-proof">
+            <div class="avatar-stack" aria-hidden="true"><span>📚</span><span>✏️</span><span>🎯</span></div>
+            <p><strong>Um passo de cada vez.</strong><br><span>Seu progresso começa hoje.</span></p>
+          </div>
+        </div>
+        <div class="hero-visual" aria-label="Ilustração de planejamento de estudos">
+          <div class="visual-glow"></div>
+          <div class="study-card card-main">
+            <div class="study-card-top"><span class="mini-icon">✦</span><span class="small-label">VISÃO GERAL</span><span class="status-pill">Em andamento</span></div>
+            <h3>Seu ritmo, sua conquista.</h3>
+            <p class="muted">Continue construindo seu conhecimento.</p>
+            <div class="progress-heading"><span>Progresso dos estudos</span><strong id="heroProgress">0%</strong></div>
+            <div class="progress-track"><span id="heroProgressBar" style="width:0%"></span></div>
+            <div class="study-stats"><div><strong id="heroTopics">0</strong><span>tópicos concluídos</span></div><div><strong>5</strong><span>áreas de conhecimento</span></div></div>
+            <div class="week-strip"><span>SEG</span><span>TER</span><span>QUA</span><span>QUI</span><span>SEX</span><span>SÁB</span><span>DOM</span></div>
+            <div class="week-dots"><i class="done"></i><i class="done"></i><i></i><i class="done"></i><i></i><i></i><i></i></div>
+          </div>
+          <div class="floating-note note-top"><span>🌱</span><div><strong>Pequenos passos</strong><small>grandes resultados</small></div></div>
+          <div class="floating-note note-bottom"><span class="note-check">✓</span><div><strong>Foco no processo</strong><small>Seu plano está esperando</small></div></div>
+          <div class="decor decor-one"></div><div class="decor decor-two"></div>
         </div>
       </div>
-    </aside>
+      <div class="container hero-bottom">
+        <span>FEITO PARA A SUA ROTINA</span><div><span>✳ Conteúdo por matéria</span><span>✳ Questões interativas</span><span>✳ Progresso salvo no navegador</span></div>
+      </div>
+    </section>
 
-    <div class="area-principal">
-      <header class="topo-mobile">
-        <button
-          type="button"
-          id="abrir-menu"
-          aria-label="Abrir menu"
-        >
-          ☰
-        </button>
+    <section class="section section-subtle" id="materias">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">APRENDA POR ÁREA</span><h2>Conhecimento em <span>cada etapa.</span></h2><p>Encontre os principais conteúdos cobrados no ENEM e marque seus estudos conforme avança.</p></div>
+          <a class="text-link" href="#lista-materias">Ver todas as matérias <span>→</span></a>
+        </div>
+        <div class="subject-grid" id="subjectGrid"></div>
+        <div class="content-note"><span>ⓘ</span><p>Os tópicos são um guia de revisão baseado em conteúdos recorrentes do ensino médio e nas matrizes do ENEM. Consulte também o edital e a matriz de referência oficiais.</p></div>
+        <div id="lista-materias" class="subject-details">
+          <div class="details-heading"><div><span class="eyebrow">TRILHAS DE ESTUDO</span><h3>Explore os conteúdos</h3></div><label class="search-box"><span>⌕</span><input id="topicSearch" type="search" placeholder="Buscar matéria ou conteúdo..." aria-label="Buscar matéria ou conteúdo"></label></div>
+          <div id="topicGroups"></div>
+        </div>
+      </div>
+    </section>
 
-        <strong>Estudos ENEM</strong>
+    <section class="section" id="simulados">
+      <div class="container">
+        <div class="section-heading">
+          <div><span class="eyebrow">PRATIQUE E EVOLUA</span><h2>Hora de testar <span>o que aprendeu.</span></h2><p>Questões de treino para praticar interpretação, raciocínio e revisão de conteúdos.</p></div>
+        </div>
+        <div class="quiz-layout">
+          <div class="quiz-intro"><div class="quiz-illustration"><span>✎</span><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div></div><span class="eyebrow">SIMULADO RÁPIDO</span><h3>Pratique sem pressão.</h3><p>Responda às questões, confira o gabarito comentado e use os resultados para identificar o que revisar.</p><div class="quiz-meta"><span>◷ 5 questões</span><span>◎ Múltipla escolha</span></div><button class="button button-primary" id="startQuiz">Começar simulado <span>→</span></button></div>
+          <div class="quiz-panel" id="quizPanel"><div class="quiz-empty"><div class="empty-icon">✓</div><h3>Seu próximo acerto começa aqui.</h3><p>Quando estiver pronto, inicie o simulado ao lado.</p><div class="mini-lines"><i></i><i></i><i></i></div></div></div>
+        </div>
+      </div>
+    </section>
 
-        <button
-          type="button"
-          class="tema-mobile"
-          data-acao="tema"
-          aria-label="Alternar tema"
-        >
-          Tema
-        </button>
-      </header>
+    <section class="section essay-section" id="redacao">
+      <div class="container essay-grid">
+        <div class="essay-copy"><span class="eyebrow">REDAÇÃO NOTA 1000 COMEÇA NO TREINO</span><h2>Uma boa ideia merece<br>uma boa <span>argumentação.</span></h2><p>Pratique a estrutura dissertativo-argumentativa, fortaleça seus repertórios e confira uma lista de verificação antes de finalizar seu texto.</p><a class="button button-primary" href="#essay-tool">Abrir guia de redação <span>→</span></a></div>
+        <div class="essay-card" id="essay-tool"><div class="essay-card-heading"><div class="essay-icon">✍</div><div><h3>Checklist da redação</h3><p>Confira os pontos essenciais do seu texto.</p></div></div><div class="checklist" id="essayChecklist">
+          <label><input type="checkbox" data-essay="0"><span class="custom-check"></span><span><strong>Introdução</strong><small>Apresente o tema e sua tese.</small></span></label>
+          <label><input type="checkbox" data-essay="1"><span class="custom-check"></span><span><strong>Desenvolvimento</strong><small>Use argumentos e repertório pertinente.</small></span></label>
+          <label><input type="checkbox" data-essay="2"><span class="custom-check"></span><span><strong>Coesão e coerência</strong><small>Conecte as ideias com clareza.</small></span></label>
+          <label><input type="checkbox" data-essay="3"><span class="custom-check"></span><span><strong>Proposta de intervenção</strong><small>Inclua ação, agente, meio e finalidade.</small></span></label>
+          <label><input type="checkbox" data-essay="4"><span class="custom-check"></span><span><strong>Revisão final</strong><small>Revise gramática, acentuação e pontuação.</small></span></label>
+        </div><div class="checklist-footer"><span id="essayProgressText">0 de 5 itens concluídos</span><div class="tiny-progress"><span id="essayProgressBar"></span></div></div></div>
+      </div>
+    </section>
 
-      <main id="conteudo-principal">
-        <section
-          id="painel-materia"
-          aria-live="polite"
-        ></section>
+    <section class="section plan-section" id="plano">
+      <div class="container">
+        <div class="section-heading"><div><span class="eyebrow">CONSTÂNCIA É ESTRATÉGIA</span><h2>Organize sua <span>semana.</span></h2><p>Monte um plano simples de estudos e mantenha sua rotina visível.</p></div></div>
+        <div class="plan-layout">
+          <div class="plan-card"><div class="plan-card-heading"><div><h3>Meu plano semanal</h3><p>Escolha o foco de cada dia.</p></div><span class="plan-badge">EDITÁVEL</span></div><div class="plan-days" id="planDays"></div><div class="plan-footnote">Suas escolhas ficam salvas neste navegador.</div></div>
+          <div class="motivation-card"><div class="motivation-symbol">✳</div><span class="eyebrow">LEMBRETE IMPORTANTE</span><h3>Consistência vale mais que perfeição.</h3><p>Uma sessão de estudo bem feita já é um avanço. Revise, pratique e descanse também.</p><div class="motivation-line"></div><span class="motivation-caption">Seu progresso não precisa ser igual ao de ninguém.</span></div>
+        </div>
+      </div>
+    </section>
 
-        <section
-          id="painel-simulados"
-          hidden
-          aria-live="polite"
-        ></section>
-      </main>
+    <section class="final-cta"><div class="container final-cta-inner"><div><span class="eyebrow">VAMOS NESSA?</span><h2>O próximo passo é seu.</h2><p>Escolha um conteúdo e comece a transformar esforço em aprendizado.</p></div><a href="#materias" class="button button-light">Começar agora <span>→</span></a><div class="cta-leaf">✳</div></div></section>
+  </main>
 
-      <footer>
-        <strong>Estudos ENEM</strong>
-        <span>Conteúdos, questões e simulados em um só lugar.</span>
-      </footer>
-    </div>
-  </div>
-
-  <script src="js/conteudos.js"></script>
-  <script src="js/enem-api.js"></script>
-  <script src="js/render-questao.js"></script>
-  <script src="js/data-loader.js"></script>
-  <script src="js/render-materia.js"></script>
-  <script src="js/render-simulado.js"></script>
-  <script src="js/theme.js"></script>
-  <script src="js/tabs.js"></script>
+  <footer class="site-footer"><div class="container footer-main"><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z" fill="currentColor" opacity=".15"/><path d="M12 13.5h16M12 20h16M12 26.5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><span>estudos<span class="brand-accent">enem</span></span></a><p>Uma plataforma de apoio para sua jornada de preparação.</p><div class="footer-links"><a href="#materias">Matérias</a><a href="#simulados">Simulados</a><a href="#redacao">Redação</a><a href="#plano">Plano semanal</a></div></div><div class="container footer-bottom"><span>© <span id="currentYear"></span> Estudos ENEM · Projeto educacional independente.</span><span>Feito para aprender, revisar e evoluir. <b>✳</b></span></div></footer>
 </body>
 </html>
