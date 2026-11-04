@@ -6,13 +6,18 @@
   <meta name="description" content="Estudos ENEM: conteúdos organizados, simulados interativos e ferramentas para planejar sua preparação para o Enem.">
   <meta name="theme-color" content="#ffffff" id="themeColorMeta">
   <title>Estudos ENEM — Sua preparação, no seu ritmo</title>
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
   <!-- Aplica o tema salvo (ou a preferência do sistema) antes do CSS para evitar flash de tema errado -->
   <script>
     (() => {
       const KEY = 'estudosEnem.theme';
       const root = document.documentElement;
       const meta = document.querySelector('meta[name="theme-color"]');
-      const colors = { light: '#ffffff', dark: '#121212' };
+      const colors = { light: '#ffffff', dark: '#020617' };
       function apply(theme, persist = true) {
         root.setAttribute('data-theme', theme);
         if (meta) meta.content = colors[theme];
@@ -31,11 +36,6 @@
       window.__enemTheme = { apply, isDark: () => root.getAttribute('data-theme') === 'dark' };
     })();
   </script>
-  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/styles.css">
   <script src="js/data.js" defer></script>
   <script src="js/app.js" defer></script>
 </head>
@@ -47,7 +47,8 @@
     <div class="spinner" aria-hidden="true"></div>
   </div>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
-  <header class="site-header">
+
+  <header class="site-header" id="siteHeader">
     <div class="container header-inner">
       <a class="brand" href="index.html" aria-label="Estudos ENEM, página inicial">
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z" fill="currentColor" opacity=".15"/><path d="M12 13.5h16M12 20h16M12 26.5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
@@ -71,7 +72,7 @@
   </header>
 
   <main id="conteudo">
-    <section class="hero">
+    <section class="hero" aria-label="Hero">
       <div class="container hero-grid">
         <div class="hero-copy">
           <span class="eyebrow"><span class="eyebrow-dot"></span> SUA JORNADA COMEÇA AQUI</span>
@@ -108,74 +109,161 @@
       </div>
     </section>
 
-    <section class="section section-subtle" id="materias">
+    <section class="section section-subtle" id="materias" aria-labelledby="materiasHeading">
       <div class="container">
         <div class="section-heading">
-          <div><span class="eyebrow">APRENDA POR ÁREA</span><h2>Conhecimento em <span>cada etapa.</span></h2><p>Encontre os principais conteúdos cobrados no ENEM e marque seus estudos conforme avança.</p></div>
+          <div>
+            <span class="eyebrow">APRENDA POR ÁREA</span>
+            <h2 id="materiasHeading">Conhecimento em <span>cada etapa.</span></h2>
+            <p>Encontre os principais conteúdos cobrados no ENEM e marque seus estudos conforme avança.</p>
+          </div>
           <a class="text-link" href="#lista-materias">Ver todas as matérias <span>→</span></a>
         </div>
         <div class="subject-grid" id="subjectGrid"></div>
         <div class="content-note"><span>ⓘ</span><p>Os tópicos são um guia de revisão baseado em conteúdos recorrentes do ensino médio e nas matrizes do ENEM. Consulte também o edital e a matriz de referência oficiais.</p></div>
         <div id="lista-materias" class="subject-details">
-          <div class="details-heading"><div><span class="eyebrow">TRILHAS DE ESTUDO</span><h3>Explore os conteúdos</h3></div><label class="search-box"><span>⌕</span><input id="topicSearch" type="search" placeholder="Buscar matéria ou conteúdo..." aria-label="Buscar matéria ou conteúdo"></label></div>
+          <div class="details-heading">
+            <div><span class="eyebrow">TRILHAS DE ESTUDO</span><h3>Explore os conteúdos</h3></div>
+            <label class="search-box"><span>⌕</span><input id="topicSearch" type="search" placeholder="Buscar matéria ou conteúdo..." aria-label="Buscar matéria ou conteúdo"></label>
+          </div>
           <div id="topicGroups"></div>
         </div>
       </div>
     </section>
 
-    <section class="section" id="simulados">
+    <section class="section" id="simulados" aria-labelledby="simuladosHeading">
       <div class="container">
         <div class="section-heading">
-          <div><span class="eyebrow">PRATIQUE E EVOLUA</span><h2>Hora de testar <span>o que aprendeu.</span></h2><p>Questões de treino para praticar interpretação, raciocínio e revisão de conteúdos.</p></div>
+          <div>
+            <span class="eyebrow">PRATIQUE E EVOLUA</span>
+            <h2 id="simuladosHeading">Hora de testar <span>o que aprendeu.</span></h2>
+            <p>Questões de treino para praticar interpretação, raciocínio e revisão de conteúdos.</p>
+          </div>
         </div>
         <div class="quiz-layout">
-          <div class="quiz-intro"><div class="quiz-illustration"><span>✎</span><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div></div><span class="eyebrow">SIMULADO RÁPIDO</span><h3>Pratique sem pressão.</h3><p>Responda às questões, confira o gabarito comentado e use os resultados para identificar o que revisar.</p><div class="quiz-meta"><span>◷ 5 questões</span><span>◎ Múltipla escolha</span></div><button class="button button-primary" id="startQuiz">Começar simulado <span>→</span></button></div>
-          <div class="quiz-panel" id="quizPanel"><div class="quiz-empty"><div class="empty-icon">✓</div><h3>Seu próximo acerto começa aqui.</h3><p>Quando estiver pronto, inicie o simulado ao lado.</p><div class="mini-lines"><i></i><i></i><i></i></div></div></div>
+          <div class="quiz-intro">
+            <div class="quiz-illustration"><span>✎</span><div class="orbit orbit-a"></div><div class="orbit orbit-b"></div></div>
+            <span class="eyebrow">SIMULADO RÁPIDO</span>
+            <h3>Pratique sem pressão.</h3>
+            <p>Responda às questões, confira o gabarito comentado e use os resultados para identificar o que revisar.</p>
+            <div class="quiz-meta"><span>◷ 5 questões</span><span>◎ Múltipla escolha</span></div>
+            <button class="button button-primary" id="startQuiz">Começar simulado <span>→</span></button>
+          </div>
+          <div class="quiz-panel" id="quizPanel">
+            <div class="quiz-empty">
+              <div class="empty-icon">✓</div>
+              <h3>Seu próximo acerto começa aqui.</h3>
+              <p>Quando estiver pronto, inicie o simulado ao lado.</p>
+              <div class="mini-lines"><i></i><i></i><i></i></div>
+            </div>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="section essay-section" id="redacao">
+    <section class="section essay-section" id="redacao" aria-labelledby="redacaoHeading">
       <div class="container essay-grid">
-        <div class="essay-copy"><span class="eyebrow">REDAÇÃO NOTA 1000 COMEÇA NO TREINO</span><h2>Uma boa ideia merece<br>uma boa <span>argumentação.</span></h2><p>Pratique a estrutura dissertativo-argumentativa, fortaleça seus repertórios e confira uma lista de verificação antes de finalizar seu texto.</p><a class="button button-primary" href="#essay-tool">Abrir guia de redação <span>→</span></a></div>
-        <div class="essay-card" id="essay-tool"><div class="essay-card-heading"><div class="essay-icon">✍</div><div><h3>Checklist da redação</h3><p>Confira os pontos essenciais do seu texto.</p></div></div><div class="checklist" id="essayChecklist">
-          <label><input type="checkbox" data-essay="0"><span class="custom-check"></span><span><strong>Introdução</strong><small>Apresente o tema e sua tese.</small></span></label>
-          <label><input type="checkbox" data-essay="1"><span class="custom-check"></span><span><strong>Desenvolvimento</strong><small>Use argumentos e repertório pertinente.</small></span></label>
-          <label><input type="checkbox" data-essay="2"><span class="custom-check"></span><span><strong>Coesão e coerência</strong><small>Conecte as ideias com clareza.</small></span></label>
-          <label><input type="checkbox" data-essay="3"><span class="custom-check"></span><span><strong>Proposta de intervenção</strong><small>Inclua ação, agente, meio e finalidade.</small></span></label>
-          <label><input type="checkbox" data-essay="4"><span class="custom-check"></span><span><strong>Revisão final</strong><small>Revise gramática, acentuação e pontuação.</small></span></label>
-        </div><div class="checklist-footer"><span id="essayProgressText">0 de 5 itens concluídos</span><div class="tiny-progress"><span id="essayProgressBar"></span></div></div></div>
-      </div>
-    </section>
-
-    <section class="section plan-section" id="plano">
-      <div class="container">
-        <div class="section-heading"><div><span class="eyebrow">CONSTÂNCIA É ESTRATÉGIA</span><h2>Organize sua <span>semana.</span></h2><p>Monte um plano simples de estudos e mantenha sua rotina visível.</p></div></div>
-        <div class="plan-layout">
-          <div class="plan-card"><div class="plan-card-heading"><div><h3>Meu plano semanal</h3><p>Escolha o foco de cada dia.</p></div><span class="plan-badge">EDITÁVEL</span></div><div class="plan-days" id="planDays"></div><div class="plan-footnote">Suas escolhas ficam salvas neste navegador.</div></div>
-          <div class="motivation-card"><div class="motivation-symbol">✳</div><span class="eyebrow">LEMBRETE IMPORTANTE</span><h3>Consistência vale mais que perfeição.</h3><p>Uma sessão de estudo bem feita já é um avanço. Revise, pratique e descanse também.</p><div class="motivation-line"></div><span class="motivation-caption">Seu progresso não precisa ser igual ao de ninguém.</span></div>
+        <div class="essay-copy">
+          <span class="eyebrow">REDAÇÃO NOTA 1000 COMEÇA NO TREINO</span>
+          <h2 id="redacaoHeading">Uma boa ideia merece<br>uma boa <span>argumentação.</span></h2>
+          <p>Pratique a estrutura dissertativo-argumentativa, fortaleça seus repertórios e confira uma lista de verificação antes de finalizar seu texto.</p>
+          <a class="button button-primary" href="#essay-tool">Abrir guia de redação <span>→</span></a>
+        </div>
+        <div class="essay-card" id="essay-tool">
+          <div class="essay-card-heading">
+            <div class="essay-icon">✍</div>
+            <div>
+              <h3>Checklist da redação</h3>
+              <p>Confira os pontos essenciais do seu texto.</p>
+            </div>
+          </div>
+          <div class="checklist" id="essayChecklist" aria-label="Checklist da redação">
+            <label><input type="checkbox" data-essay="0"><span class="custom-check"></span><span><strong>Introdução</strong><small>Apresente o tema e sua tese.</small></span></label>
+            <label><input type="checkbox" data-essay="1"><span class="custom-check"></span><span><strong>Desenvolvimento</strong><small>Use argumentos e repertório pertinente.</small></span></label>
+            <label><input type="checkbox" data-essay="2"><span class="custom-check"></span><span><strong>Coesão e coerência</strong><small>Conecte as ideias com clareza.</small></span></label>
+            <label><input type="checkbox" data-essay="3"><span class="custom-check"></span><span><strong>Proposta de intervenção</strong><small>Inclua ação, agente, meio e finalidade.</small></span></label>
+            <label><input type="checkbox" data-essay="4"><span class="custom-check"></span><span><strong>Revisão final</strong><small>Revise gramática, acentuação e pontuação.</small></span></label>
+          </div>
+          <div class="checklist-footer"><span id="essayProgressText">0 de 5 itens concluídos</span><div class="tiny-progress"><span id="essayProgressBar"></span></div></div>
         </div>
       </div>
     </section>
 
-    <section class="final-cta"><div class="container final-cta-inner"><div><span class="eyebrow">VAMOS NESSA?</span><h2>O próximo passo é seu.</h2><p>Escolha um conteúdo e comece a transformar esforço em aprendizado.</p></div><a href="#materias" class="button button-light">Começar agora <span>→</span></a><div class="cta-leaf">✳</div></div></section>
+    <section class="section plan-section" id="plano" aria-labelledby="planoHeading">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <span class="eyebrow">CONSTÂNCIA É ESTRATÉGIA</span>
+            <h2 id="planoHeading">Organize sua <span>semana.</span></h2>
+            <p>Monte um plano simples de estudos e mantenha sua rotina visível.</p>
+          </div>
+        </div>
+        <div class="plan-layout">
+          <div class="plan-card">
+            <div class="plan-card-heading">
+              <div>
+                <h3>Meu plano semanal</h3>
+                <p>Escolha o foco de cada dia.</p>
+              </div>
+              <span class="plan-badge">EDITÁVEL</span>
+            </div>
+            <div class="plan-days" id="planDays"></div>
+            <div class="plan-footnote">Suas escolhas ficam salvas neste navegador.</div>
+          </div>
+          <div class="motivation-card">
+            <div class="motivation-symbol">✳</div>
+            <span class="eyebrow">LEMBRETE IMPORTANTE</span>
+            <h3>Consistência vale mais que perfeição.</h3>
+            <p>Uma sessão de estudo bem feita já é um avanço. Revise, pratique e descanse também.</p>
+            <div class="motivation-line"></div>
+            <span class="motivation-caption">Seu progresso não precisa ser igual ao de ninguém.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" aria-label="CTA final">
+      <div class="container final-cta-inner">
+        <div>
+          <span class="eyebrow">VAMOS NESSA?</span>
+          <h2>O próximo passo é seu.</h2>
+          <p>Escolha um conteúdo e comece a transformar esforço em aprendizado.</p>
+        </div>
+        <a href="#materias" class="button button-light">Começar agora <span>→</span></a>
+        <div class="cta-leaf">✳</div>
+      </div>
+    </section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-main"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z" fill="currentColor" opacity=".15"/><path d="M12 13.5h16M12 20h16M12 26.5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><span>estudos<span class="brand-accent">enem</span></span></a><p>Uma plataforma de apoio para sua jornada de preparação.</p><div class="footer-links"><a href="#materias">Matérias</a><a href="#simulados">Simulados</a><a href="#redacao">Redação</a><a href="#plano">Plano semanal</a></div></div><div class="container footer-bottom"><span>© <span id="currentYear"></span> Estudos ENEM · Projeto educacional independente.</span><span>Feito para aprender, revisar e evoluir. <b>✳</b></span></div></footer>
-<!-- AI Helper Button -->
-<button id="aiHelperBtn" class="ai-helper-btn" aria-label="Abrir assistente de IA">🤖</button>
+  <footer class="site-footer">
+    <div class="container footer-main">
+      <a class="brand" href="index.html" aria-label="Estudos ENEM, página inicial">
+        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z" fill="currentColor" opacity=".15"/><path d="M12 13.5h16M12 20h16M12 26.5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
+        <span>estudos<span class="brand-accent">enem</span></span>
+      </a>
+      <p>Uma plataforma de apoio para sua jornada de preparação.</p>
+      <div class="footer-links"><a href="#materias">Matérias</a><a href="#simulados">Simulados</a><a href="#redacao">Redação</a><a href="#plano">Plano semanal</a></div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span id="currentYear"></span> Estudos ENEM · Projeto educacional independente.</span>
+      <span>Feito para aprender, revisar e evoluir. <b>✳</b></span>
+    </div>
+  </footer>
 
-<!-- AI Helper Chat Container -->
-<div id="aiHelperChat" class="ai-helper-chat" aria-hidden="true">
-  <div class="ai-helper-header">
-    <h3>Assistente IA</h3>
-    <button id="aiHelperCloseBtn" aria-label="Fechar chat">×</button>
+  <!-- AI Helper Button -->
+  <button id="aiHelperBtn" class="ai-helper-btn" type="button" aria-label="Abrir assistente de IA">🤖</button>
+
+  <!-- AI Helper Chat Container -->
+  <div id="aiHelperChat" class="ai-helper-chat" aria-hidden="true">
+    <div class="ai-helper-header">
+      <h3>Assistente IA</h3>
+      <button id="aiHelperCloseBtn" type="button" aria-label="Fechar chat">×</button>
+    </div>
+    <div id="aiHelperMessages" class="ai-helper-messages"></div>
+    <div class="ai-helper-input-area">
+      <input type="text" id="aiHelperInput" placeholder="Digite sua pergunta..." aria-label="Digite sua pergunta para o assistente de IA">
+      <button id="aiHelperSendBtn" type="button" aria-label="Enviar">→</button>
+    </div>
   </div>
-  <div id="aiHelperMessages" class="ai-helper-messages"></div>
-  <div class="ai-helper-input-area">
-    <input type="text" id="aiHelperInput" placeholder="Digite sua pergunta..." aria-label="Digite sua pergunta para o assistente de IA">
-    <button id="aiHelperSendBtn" aria-label="Enviar">→</button>
-  </div>
-</div>
 </body>
 </html>
