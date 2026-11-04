@@ -6,7 +6,7 @@
 
 Uma plataforma de estudos responsiva com conteúdos organizados por matéria, simulados interativos, checklist de redação e planejamento semanal.
 
-![Versão](https://img.shields.io/badge/vers%C3%A3o-v1.0-2f8054?style=for-the-badge)
+![Versão](https://img.shields.io/badge/vers%C3%A3o-v2.0-2f8054?style=for-the-badge)
 ![HTML5](https://img.shields.io/badge/HTML5-estrutura-e34f26?style=flat-square&logo=html5&logoColor=white)
 ![CSS3](https://img.shields.io/badge/CSS3-estiliza%C3%A7%C3%A3o-1572b6?style=flat-square&logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-interatividade-f7df1e?style=flat-square&logo=javascript&logoColor=222)
@@ -20,18 +20,21 @@ Uma plataforma de estudos responsiva com conteúdos organizados por matéria, si
 
 O **Estudos ENEM** é um site educacional desenvolvido para reunir, em um só lugar, trilhas de conteúdo para revisão do Exame Nacional do Ensino Médio. A interface usa uma identidade visual em verde-claro e branco, com foco em legibilidade, organização e facilidade de uso.
 
-> **Versão atual: v1.0** — primeira versão funcional do projeto.
+> **Versão atual: v2.0** — redesign profissional com sistema de temas claro/escuro, estados de carregamento, acessibilidade e JavaScript totalmente revisado.
 
 ## 🚀 Funcionalidades
 
 - **Conteúdos por matéria:** tópicos organizados em Matemática, Física, Química, Biologia, Linguagens e Português, Redação, História, Geografia, Filosofia, Sociologia, Língua Estrangeira, Artes e Educação Física e temas interdisciplinares.
-- **Busca de conteúdo:** filtre os tópicos por matéria ou palavra-chave.
+- **Busca de conteúdo:** filtre os tópicos por matéria ou palavra-chave (com esqueletos de carregamento).
 - **Acompanhamento de progresso:** marque os assuntos já estudados e visualize o progresso na página inicial.
 - **Simulado interativo:** questões de múltipla escolha com correção e explicações.
 - **Checklist de redação:** acompanhe os elementos essenciais do texto dissertativo-argumentativo.
 - **Plano semanal:** selecione um foco de estudo para cada dia.
 - **Salvamento local:** preferências e progresso ficam armazenados no `localStorage` do navegador.
-- **Layout responsivo:** adaptação para computadores, tablets e celulares.
+- **Sistema de temas:** modo claro e escuro com persistência da preferência (`localStorage` e `prefers-color-scheme`).
+- **Layout responsivo:** adaptação para computadores, tablets e celulares (mobile-first).
+- **Acessibilidade:** navegação por teclado, link "pular para o conteúdo", estados de foco visíveis e contraste conforme WCAG.
+- **Estados de carregamento:** loader inicial, skeletons e spinners que evitam saltos de tela (layout shift).
 
 ## 🗂️ Estrutura de pastas
 

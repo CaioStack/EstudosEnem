@@ -4,8 +4,33 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="Estudos ENEM: conteúdos organizados, simulados interativos e ferramentas para planejar sua preparação para o Enem.">
-  <meta name="theme-color" content="#e8f7ed">
+  <meta name="theme-color" content="#ffffff" id="themeColorMeta">
   <title>Estudos ENEM — Sua preparação, no seu ritmo</title>
+  <!-- Aplica o tema salvo (ou a preferência do sistema) antes do CSS para evitar flash de tema errado -->
+  <script>
+    (() => {
+      const KEY = 'estudosEnem.theme';
+      const root = document.documentElement;
+      const meta = document.querySelector('meta[name="theme-color"]');
+      const colors = { light: '#ffffff', dark: '#121212' };
+      function apply(theme, persist = true) {
+        root.setAttribute('data-theme', theme);
+        if (meta) meta.content = colors[theme];
+        if (persist) {
+          try { localStorage.setItem(KEY, theme); } catch (e) {}
+        }
+        window.dispatchEvent(new CustomEvent('enem:themechange', { detail: { theme } }));
+      }
+      try {
+        const saved = localStorage.getItem(KEY);
+        const wantsDark = saved ? saved === 'dark' : window.matchMedia('(prefers-color-scheme: dark)').matches;
+        apply(wantsDark ? 'dark' : 'light', false);
+      } catch {
+        apply('light', false);
+      }
+      window.__enemTheme = { apply, isDark: () => root.getAttribute('data-theme') === 'dark' };
+    })();
+  </script>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -15,6 +40,12 @@
   <script src="js/app.js" defer></script>
 </head>
 <body>
+  <!-- Loader inicial: evita saltos de layout enquanto a página e os dados são preparados -->
+  <div id="pageLoader" class="page-loader">
+    <span class="loader-brand" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z" fill="currentColor" opacity=".15"/><path d="M12 13.5h16M12 20h16M12 26.5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
+    <span class="loader-text">Estudos ENEM</span>
+    <div class="spinner" aria-hidden="true"></div>
+  </div>
   <a class="skip-link" href="#conteudo">Pular para o conteúdo</a>
   <header class="site-header">
     <div class="container header-inner">
@@ -22,9 +53,14 @@
         <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z" fill="currentColor" opacity=".15"/><path d="M12 13.5h16M12 20h16M12 26.5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span>
         <span>estudos<span class="brand-accent">enem</span></span>
       </a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Abrir menu" aria-expanded="false">☰</button>
+      <button class="menu-toggle" id="menuToggle" type="button" aria-label="Abrir menu" aria-expanded="false">☰</button>
       <nav class="main-nav" id="mainNav" aria-label="Navegação principal">
-        <a class="active" href="index.html">Início</a>
+        <a class="active" href="index.html" aria-current="page">Início</a>
+        <button class="dark-mode-toggle" id="darkModeToggle" type="button" aria-label="Alternar para o modo escuro">
+          <span class="toggle-icon toggle-icon-sun" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><path d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"/></svg></span>
+          <span class="toggle-icon toggle-icon-moon" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79"/></svg></span>
+          <span class="visually-hidden" id="themeLabel">Modo escuro</span>
+        </button>
         <a href="#materias">Matérias</a>
         <a href="#simulados">Simulados</a>
         <a href="#redacao">Redação</a>
@@ -125,6 +161,21 @@
     <section class="final-cta"><div class="container final-cta-inner"><div><span class="eyebrow">VAMOS NESSA?</span><h2>O próximo passo é seu.</h2><p>Escolha um conteúdo e comece a transformar esforço em aprendizado.</p></div><a href="#materias" class="button button-light">Começar agora <span>→</span></a><div class="cta-leaf">✳</div></div></section>
   </main>
 
-  <footer class="site-footer"><div class="container footer-main"><a class="brand" href="index.html"><span class="brand-mark"><svg viewBox="0 0 40 40"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z" fill="currentColor" opacity=".15"/><path d="M12 13.5h16M12 20h16M12 26.5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><span>estudos<span class="brand-accent">enem</span></span></a><p>Uma plataforma de apoio para sua jornada de preparação.</p><div class="footer-links"><a href="#materias">Matérias</a><a href="#simulados">Simulados</a><a href="#redacao">Redação</a><a href="#plano">Plano semanal</a></div></div><div class="container footer-bottom"><span>© <span id="currentYear"></span> Estudos ENEM · Projeto educacional independente.</span><span>Feito para aprender, revisar e evoluir. <b>✳</b></span></div></footer>
+  <footer class="site-footer"><div class="container footer-main"><a class="brand" href="index.html"><span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 40 40"><path d="M20 4 35 12.5v15L20 36 5 27.5v-15L20 4Z" fill="currentColor" opacity=".15"/><path d="M12 13.5h16M12 20h16M12 26.5h10" stroke="currentColor" stroke-width="3" stroke-linecap="round"/></svg></span><span>estudos<span class="brand-accent">enem</span></span></a><p>Uma plataforma de apoio para sua jornada de preparação.</p><div class="footer-links"><a href="#materias">Matérias</a><a href="#simulados">Simulados</a><a href="#redacao">Redação</a><a href="#plano">Plano semanal</a></div></div><div class="container footer-bottom"><span>© <span id="currentYear"></span> Estudos ENEM · Projeto educacional independente.</span><span>Feito para aprender, revisar e evoluir. <b>✳</b></span></div></footer>
+<!-- AI Helper Button -->
+<button id="aiHelperBtn" class="ai-helper-btn" aria-label="Abrir assistente de IA">🤖</button>
+
+<!-- AI Helper Chat Container -->
+<div id="aiHelperChat" class="ai-helper-chat" aria-hidden="true">
+  <div class="ai-helper-header">
+    <h3>Assistente IA</h3>
+    <button id="aiHelperCloseBtn" aria-label="Fechar chat">×</button>
+  </div>
+  <div id="aiHelperMessages" class="ai-helper-messages"></div>
+  <div class="ai-helper-input-area">
+    <input type="text" id="aiHelperInput" placeholder="Digite sua pergunta..." aria-label="Digite sua pergunta para o assistente de IA">
+    <button id="aiHelperSendBtn" aria-label="Enviar">→</button>
+  </div>
+</div>
 </body>
 </html>
