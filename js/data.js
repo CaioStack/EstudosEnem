@@ -20,5 +20,103 @@ window.ENEM_DATA = {
     {subject:"Geografia",question:"O crescimento acelerado das cidades, sem planejamento adequado, pode contribuir diretamente para:",options:["A eliminação completa das desigualdades socioespaciais.","A redução automática do trânsito e da poluição.","A distribuição igualitária de equipamentos públicos.","A expansão de moradias precárias e problemas de mobilidade.","O fim da segregação residencial."],answer:3,explanation:"A urbanização sem infraestrutura e políticas públicas suficientes pode ampliar a ocupação precária, a segregação socioespacial e as dificuldades de mobilidade."},
     {subject:"Física",question:"Um aparelho de 1.000 W permanece ligado durante 2 horas. Qual é a energia consumida, em kWh?",options:["0,5 kWh","1 kWh","2 kWh","20 kWh","2.000 kWh"],answer:2,explanation:"1.000 W equivalem a 1 kW. Energia = potência × tempo = 1 kW × 2 h = 2 kWh."},
     {subject:"Português",question:"Em uma campanha de vacinação, a frase “Proteja quem você ama: vacine-se” tem como função predominante:",options:["Narrar uma sequência de acontecimentos fictícios.","Convencer o público a adotar uma ação.","Apresentar uma definição científica neutra.","Descrever um lugar detalhadamente.","Criar uma instrução sem intenção comunicativa."],answer:1,explanation:"A frase procura influenciar o comportamento do leitor por meio de um apelo direto, característica da função apelativa ou conativa da linguagem."}
-  ]
+  ],
+  questionsByTopic: {
+    "matematica-0": [
+      {
+        question: "Qual é o resultado da operação 3/4 + 1/2?",
+        options: ["1/4", "1/2", "3/4", "5/4", "1"],
+        answer: 4,
+        explanation: "Para somar frações, deixamos o mesmo denominador: 3/4 + 2/4 = 5/4 = 1 1/4"
+      },
+      {
+        question: "Se uma pizza é dividida em 8 partes iguais e você come 3 partes, qual fração da pizza você comeu?",
+        options: ["1/8", "2/8", "3/8", "4/8", "6/8"],
+        answer: 2,
+        explanation: "Você comeu 3 das 8 partes, então a fração é 3/8"
+      },
+      {
+        question: "Qual é o valor de 0,25 × 0,4?",
+        options: ["0,01", "0,1", "0,1", "0,1", "0,001"],
+        answer: 1,
+        explanation: "0,25 × 0,4 = 0,10 = 0,1"
+      },
+      {
+        question: "Converta 3/5 para decimal:",
+        options: ["0,3", "0,5", "0,6", "0,8", "0,9"],
+        answer: 2,
+        explanation: "3 ÷ 5 = 0,6"
+      },
+      {
+        question: "Se 2/3 de um número é 10, qual é esse número?",
+        options: ["12", "15", "18", "20", "25"],
+        answer: 1,
+        explanation: "Se 2/3 × x = 10, então x = 10 × 3/2 = 15"
+      }
+    ],
+    "fisica-0": [
+      {
+        question: "Qual é a unidade básica de comprimento no Sistema Internacional (SI)?",
+        options: ["Centímetro", "Metro", "Quilômetro", "Milímetro", "Decímetro"],
+        answer: 1,
+        explanation: "A unidade básica de comprimento no SI é o metro (m)"
+      },
+      {
+        question: "Um corpo se move 100 metros em 20 segundos. Qual é sua velocidade média?",
+        options: ["2 m/s", "3 m/s", "4 m/s", "5 m/s", "6 m/s"],
+        answer: 3,
+        explanation: "Velocidade = distância / tempo = 100m / 20s = 5 m/s"
+      },
+      {
+        question: "Qual é o símbolo da unidade de massa no SI?",
+        options: ["m", "kg", "s", "A", "K"],
+        answer: 1,
+        explanation: "O símbolo da unidade de massa no SI é kg (quilograma)"
+      },
+      {
+        question: "Converta 5 km para metros:",
+        options: ["50 m", "500 m", "5000 m", "50000 m", "500000 m"],
+        answer: 2,
+        explanation: "1 km = 1000 m, então 5 km = 5 × 1000 = 5000 m"
+      },
+      {
+        question: "Qual é a grandesa física que mede a quantidade de movimento?",
+        options: ["Força", "Energia", "Impulso", "Potência", "Pressão"],
+        answer: 2,
+        explanation: "A quantidade de movimento (momentum) é dada por p = m × v, onde m é massa e v é velocidade"
+      }
+    ],
+    "portugues-0": [
+      {
+        question: "No texto 'O sol brilhava forte no céu azul', o que está sendo descrito?",
+        options: ["Uma ação", "Uma qualidade", "Um estado", "Uma comparação", "Uma negação"],
+        answer: 1,
+        explanation: "O texto descreve a qualidade do sol (brilhava forte) e do céu (azul)"
+      },
+      {
+        question: "Qual é o sujeito na frase 'As crianças brincaram no parque'?",
+        options: ["As crianças", "brincaram", "no parque", "As", "crianças"],
+        answer: 0,
+        explanation: "O sujeito é 'As crianças', que realiza a ação de brincar"
+      },
+      {
+        question: "Identifique o predicado na frase 'O livro está na mesa':",
+        options: ["O livro", "está", "na mesa", "está na mesa", "livro está"],
+        answer: 3,
+        explanation: "O predicado é 'está na mesa', que diz algo sobre o sujeito 'O livro'"
+      },
+      {
+        question: "Que tipo de palavra é 'rapidamente' na frase 'Ele correu rapidamente'?",
+        options: ["Substantivo", "Adjetivo", "Verbo", "Advérbio", "Preposição"],
+        answer: 3,
+        explanation: "Rapidamente é um advérbio que modifica o verbo 'correu', indicando como a ação ocorreu"
+      },
+      {
+        question: "Na frase 'Maria deu um presente ao João', quem é o objeto indireto?",
+        options: ["Maria", "deu", "presente", "ao João", "João"],
+        answer: 3,
+        explanation: "O objeto indireto é 'ao João', indicando para quem o presente foi dado"
+      }
+    ]
+  }
 };
