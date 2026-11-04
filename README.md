@@ -18,9 +18,21 @@ Uma plataforma de estudos responsiva com conteúdos organizados por matéria, si
 
 ## ✨ Sobre o projeto
 
-O **Estudos ENEM** é um site educacional desenvolvido para reunir, em um só lugar, trilhas de conteúdo para revisão do Exame Nacional do Ensino Médio. A interface usa uma identidade visual em verde-claro e branco, com foco em legibilidade, organização e facilidade de uso.
+O **Estudos ENEM** é um site educacional desenvolvido para reunir, em um só lugar, trilhas de conteúdo para revisão do Exame Nacional do Ensino Médio. A interface usa uma identidade visual em verde-esmeralda moderno com foco em legibilidade, organização e facilidade de uso.
 
 > **Versão atual: v2.0** — redesign profissional com sistema de temas claro/escuro, estados de carregamento, acessibilidade e JavaScript totalmente revisado.
+
+## 🎨 Design
+
+O redesign da versão 2.0 introduz um design system coeso com:
+
+- **Tema claro:** fundo branco com detalhes em verde-esmeralda moderno e alto contraste
+- **Tema escuro:** fundo escuro neutro (#020617) com destaques em verde esmeralda brilhante
+- **Persistência:** preferência de tema salva no `localStorage` e respeita `prefers-color-scheme`
+- **Tipografia hierárquica:** Manrope para títulos, DM Sans para corpo de texto
+- **Componentes refinados:** cards com sombra suave, bordas arredondadas, estados de hover marcados
+- **Espaçamento consistente:** sistema de padding/margin para evitar saltos de tela (layout shift)
+- **Micro-interações:** transições sutis, animações de carregamento e estados de foco visíveis
 
 ## 🚀 Funcionalidades
 
